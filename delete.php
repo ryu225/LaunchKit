@@ -1,0 +1,1 @@
+<?php require 'includes/bootstrap.php';require_login();if($_SERVER['REQUEST_METHOD']!=='POST'){http_response_code(405);exit;}check_csrf();$q=db()->prepare('DELETE FROM sites WHERE id=? AND user_id=?');$q->execute([(int)($_POST['id']??0),user_id()]);redirect('dashboard.php?deleted=1');

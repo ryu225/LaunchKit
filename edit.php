@@ -1,0 +1,1 @@
+<?php require 'includes/bootstrap.php';require_login();$site=site_by_id((int)($_GET['id']??0));if(!$site){http_response_code(404);exit('الموقع غير موجود.');}$editing=true;require 'includes/site_form.php';
